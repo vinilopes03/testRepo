@@ -17,7 +17,7 @@ public class CWE397_Throw_Generic__declare_Exception_01 extends AbstractTestCase
     public void bad() throws Exception /* FLAW: Method is declared as throwing Exception, which is very generic */ 
     {
         int thisIsATest;
-        FileInputStream streamFileInput = new FileInputStream(); /* May throw a FileNotFoundException */
+        FileInputStream streamFileInput = null; /* May throw a FileNotFoundException */
         IO.writeLine("File 'filename.txt' exists");
         thisIsATest = 1;
 
@@ -67,4 +67,4 @@ public class CWE397_Throw_Generic__declare_Exception_01 extends AbstractTestCase
     {
         mainFromParent(args);
     }
-}
+}
