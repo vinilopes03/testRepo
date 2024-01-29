@@ -19,7 +19,7 @@ def execute_git_commands(filepath, testcase_id, vcc):
     commit = subprocess.Popen(f'git commit -m "{commit_msg}"', shell=True).wait()
 
     # Push the change
-    push = subprocess.Popen(f'git push origin {branch_name}', shell=True).wait()
+    push = subprocess.Popen(f'git push -f origin master {branch_name}', shell=True).wait()
 
 
 def parse_testcase_id(filepath):
